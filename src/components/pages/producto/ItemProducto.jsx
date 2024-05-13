@@ -1,22 +1,22 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const ItemProducto = () => {
+const ItemProducto = ({producto}) => {
 
 
 
   return (
     <tr>
-      <td className="text-center">1</td>
-      <td>Medialuna</td>
-      <td className="text-end">$300</td>
+      <td className="text-center">{producto.id}</td>
+      <td>{producto.nombreProducto}</td>
+      <td className="text-end">${producto.precio}</td>
       <td className="text-center">
         <img
-          src="https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg"
+          src={producto.imagen}
           className="img-thumbnail"
-          alt="capuchino"
+          alt={producto.nombreProducto}
         ></img>
       </td>
-      <td>Dulce</td>
+      <td>{producto.categoria}</td>
       <td className="text-center">
         <Button variant="warning" className="me-lg-2 btn btn-warning">
           <i className="bi bi-pencil-square"></i>
