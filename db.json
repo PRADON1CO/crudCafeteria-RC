@@ -1,0 +1,15 @@
+{
+    "productos":[
+        {
+            "nombreProducto": "Cafe",
+            "precio": "300",
+            "imagen": "",
+            "categoria": "Infusiones",
+            "descripcion_breve": "ssssssdsd",
+            "descripcion_amplia": "dddddddfgafga aaghgahsgja.",
+            "id": "1"
+        }
+    ]
+
+    
+}
