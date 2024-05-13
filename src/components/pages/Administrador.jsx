@@ -1,10 +1,28 @@
 import { Button, Table } from "react-bootstrap";
 import ItemProducto from "./producto/ItemProducto";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { listarProductos } from "../helpers/queries";
 
 const Administrador = () => {
 
+  const [productos, setProductos] = useState([])
 
+  useEffect (() => {
+    obtenerProductos()
+  }, [])
+
+  const obtenerProductos = async() => {
+    const respuesta = await listarProductos();
+    if(respuesta.status === 200){
+      //guardo los productos en el state
+      const datos = await respuesta.json();
+      setProductos(datos)
+    }else{
+      //Mostrar un mensaje al usuario
+    }
+    
+  }
 
   return (
     <section className="container mainSection">
@@ -27,10 +45,10 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
-          <ItemProducto></ItemProducto>
+          {
+            productos.map((itemProducto)=> <ItemProducto key={itemProducto.id} producto={itemProducto}></ItemProducto>)
+          }
+          
         </tbody>
       </Table>
     </section>
