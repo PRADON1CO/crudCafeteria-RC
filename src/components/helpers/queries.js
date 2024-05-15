@@ -21,3 +21,19 @@ export const listarProductos = async ()=> {
         console.error(error)
     }
 }
+
+//POST
+export const crearProducto = async(productoNuevo)=>{
+    try{
+        const respuesta = await fetch ('http://localhost:3000/productos',{
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(productoNuevo)
+        });
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
+};
