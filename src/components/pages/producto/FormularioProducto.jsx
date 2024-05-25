@@ -21,7 +21,7 @@ const FormularioProducto = ({creando}) => {
         if (respuesta.status === 201){
           Swal.fire({
             title: "Producto Creado!",
-            text: `El producto {producto.nombreProducto} fue creado correctamente`,
+            text: `El producto ( ${producto.nombreProducto} ) fue creado correctamente`,
             icon: "success"
           });
           reset()
@@ -168,7 +168,7 @@ const FormularioProducto = ({creando}) => {
           </Form.Text>
         </Form.Group>
 
-        <Button type="submit" variant="success">
+        <Button type="submit" className="btn btn-dark">
           Guardar
         </Button>
       </Form>

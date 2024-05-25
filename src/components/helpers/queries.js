@@ -13,6 +13,7 @@ export const login = (usuario)=>{
     }
 }
 
+//GET
 export const listarProductos = async ()=> {
     try{
         const respuesta = await fetch ('http://localhost:3000/productos');
@@ -37,3 +38,23 @@ export const crearProducto = async(productoNuevo)=>{
         console.error(error)
     }
 };
+
+//Delete
+export const eliminarProductoAPI = async(id)=>{
+    try{
+        const respuesta = await fetch ('http://localhost:3000/productos/'+id,{
+            method: "DELETE",
+        });
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
+};
+
+// export default eliminarProductoAPI
+
+
+//PUT(todo el produco), PATCH
+export const editarProducto = async()=>{         
+
+}
