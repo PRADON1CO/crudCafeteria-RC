@@ -23,6 +23,16 @@ export const listarProductos = async ()=> {
     }
 }
 
+//GET
+export const obtenerProducto = async (id)=> {
+    try{
+        const respuesta = await fetch ('http://localhost:3000/productos/'+id);
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
+}
+
 //POST
 export const crearProducto = async(productoNuevo)=>{
     try{
@@ -55,11 +65,17 @@ export const eliminarProductoAPI = async(id)=>{
 
 
 //PUT(todo el produco), PATCH
-export const obtenerProducto = async (id)=> {
+export const editarProducto = async(productoActualizado, id)=>{
     try{
-        const respuesta = await fetch ('http://localhost:3000/productos/'+id);
+        const respuesta = await fetch ('http://localhost:3000/productos/'+id,{
+            method: "PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(productoActualizado)
+        });
         return respuesta;
     }catch(error){
         console.error(error)
     }
-}
+};

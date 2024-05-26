@@ -1,22 +1,31 @@
 {
   "productos": [
     {
-      "nombreProducto": "café",
-      "precio": "1400",
+      "nombreProducto": "Café",
+      "precio": "1278",
       "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
       "categoria": "Infusiones",
       "descripcion_breve": "Café exresso",
-      "descripcion_amplia": "bebida de café concentrada y aromática que se prepara haciendo pasar agua caliente a alta presión por granos de café muy finamente molidos.",
+      "descripcion_amplia": "Sumérgete en el deleite irresistible de nuestro café artesanal, donde la riqueza de los granos se encuentra con la indulgencia del sabor. Con una mezcla perfecta de tradición y pasión, cada taza es una obra maestra elaborada que seduce tus sentidos con cada sorbo. Desde los clásicos expresos hasta los lattes más exquisitos, cada opción es una invitación a un mundo de placer culinario. Elige calidad, elige sabor, elige nuestro café para una experiencia única en cada momento del día.\n",
       "id": "c4ac"
     },
     {
-      "id": "a49e",
-      "nombreProducto": "te verde",
+      "nombreProducto": "Te Verde",
       "precio": "700",
       "imagen": "https://img.freepik.com/foto-gratis/placa-madera-hoja-objeto-alimentacion-saludable_1172-451.jpg",
       "categoria": "Infusiones",
       "descripcion_breve": "Una bebida de origen Chino",
-      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular."
+      "descripcion_amplia": "Se deriva de las hojas de la planta Camellia sinensis y es apreciado tanto por su sabor refrescante como por sus innumerables beneficios para la salud, lo que lo convierte en una elección cada vez más popular.",
+      "id": "a49e"
+    },
+    {
+      "nombreProducto": "Donas De Chocolate",
+      "precio": "2000",
+      "imagen": "https://images.pexels.com/photos/2955820/pexels-photo-2955820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "Dulce",
+      "descripcion_breve": "De un chocolate semi amargo",
+      "descripcion_amplia": "Disfruta el irresistible sabor de nuestras donas de chocolate artesanales. Cada mordisco es una experiencia indulgente que combina la suavidad de la masa con la intensidad del chocolate. Desde las clásicas con glaseado hasta las rellenas de crema de cacao, cada dona es una invitación a un mundo de placer culinario.",
+      "id": "9c5e"
     }
   ]
 }

@@ -1,9 +1,9 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProducto, obtenerProducto } from "../../helpers/queries.js";
+import { crearProducto, editarProducto, obtenerProducto } from "../../helpers/queries.js";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FormularioProducto = ({creando}) => {
   const {
@@ -15,6 +15,7 @@ const FormularioProducto = ({creando}) => {
   } = useForm();
 
   const { id } = useParams();
+  const navegacion = useNavigate()
 
   useEffect(()=>{
     //verificar si estoy editanto
@@ -55,12 +56,22 @@ const FormularioProducto = ({creando}) => {
         }else{
           Swal.fire({
             title: "Ocurrio un error!",
-            text: `El producto {producto.nombreProducto} no fue creado. Intenta nuevamente en unos minutos`,
+            text: `El producto " ${producto.nombreProducto} " no fue creado. Intenta nuevamente en unos minutos`,
             icon: "error"
           });
         }
     }else{
       //tengo que pedir a la api editar el producto
+      const respuesta = await editarProducto(producto, id);
+      if(respuesta.status===200){
+        Swal.fire({
+          title: "Producto editado",
+          text: `El producto " ${producto.nombreProducto} " fue editado correctamente.`,
+          icon: "success"
+        });
+        //redireccionar al administrador
+        navegacion('/administrador')
+      }
     }
   };
 

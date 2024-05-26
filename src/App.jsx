@@ -13,6 +13,7 @@ import CardProducto from "./components/pages/producto/CardProducto";
 import { useState } from "react";
 import ListaRutasAdmin from "./components/routes/ListaRutasAdmin";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
+import DetalleProducto from "./components/pages/DetalleProducto";
 
 function App() {
   const usuario = JSON.parse(sessionStorage.getItem('usuarioRollingCoffee')) || '';
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} className="menu"></Menu>
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route
@@ -33,10 +34,11 @@ function App() {
         ></Route>
        
         <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+
         <Route
           exact
-          path="/detalle"
-          element={<Administrador></Administrador>}
+          path="/detalle/:id"
+          element={<DetalleProducto></DetalleProducto>}
         ></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

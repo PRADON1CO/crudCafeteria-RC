@@ -15,7 +15,7 @@ const logout = ()=>{
 }
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary menu">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
