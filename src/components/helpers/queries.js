@@ -55,6 +55,11 @@ export const eliminarProductoAPI = async(id)=>{
 
 
 //PUT(todo el produco), PATCH
-export const editarProducto = async()=>{         
-
+export const obtenerProducto = async (id)=> {
+    try{
+        const respuesta = await fetch ('http://localhost:3000/productos/'+id);
+        return respuesta;
+    }catch(error){
+        console.error(error)
+    }
 }

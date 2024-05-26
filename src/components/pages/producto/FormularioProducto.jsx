@@ -1,7 +1,9 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProducto } from "../../helpers/queries.js";
+import { crearProducto, obtenerProducto } from "../../helpers/queries.js";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const FormularioProducto = ({creando}) => {
   const {
@@ -11,6 +13,31 @@ const FormularioProducto = ({creando}) => {
     reset,
     setValue,
   } = useForm();
+
+  const { id } = useParams();
+
+  useEffect(()=>{
+    //verificar si estoy editanto
+    if(creando == false){
+      cargarProducto()
+    }
+  }, [])
+
+  const cargarProducto = async ()=>{
+    //Pedir a la API el producto que tiene el id de la ruta
+    const respuesta = await obtenerProducto(id)
+    if(respuesta.status === 200){
+      const producto = await respuesta.json();
+      //Con la respuesta cargar la info en el formulario
+      setValue("nombreProducto", producto.nombreProducto);
+      setValue("precio", producto.precio);
+      setValue("descripcion_amplia", producto.descripcion_amplia);
+      setValue("descripcion_breve", producto.descripcion_breve);
+      setValue("categoria", producto.categoria);
+      setValue("imagen", producto.imagen)
+    }
+    
+  }
 
   const productoValidado = async (producto) => {
     console.log(producto);
