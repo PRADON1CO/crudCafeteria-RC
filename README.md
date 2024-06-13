@@ -1,3 +1,5 @@
 # CRUD RollingCoffee
 
-<!-- npx json-server db.json -->
+Usar este comando para poder ejecutar el archivo db.json:
+
+.  npx json-server db.json
